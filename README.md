@@ -84,18 +84,28 @@ Lo primero sera instalar ubuntu, en este caso se podra instalar el WSL desde win
 Desde la web de [ROS](http://wiki.ros.org/melodic/Installation) tenemos diferentes opciones para instalar, 
 
 En nuestro caso seleccionarios ubuntu y seria seguir los pasos.
-> sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-> sudo apt install curl
-> curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
-> sudo apt update
-> sudo apt install ros-melodic-desktop-full
-> echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
-> source ~/.bashrc
-> sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
 
+  sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+ ``` 
+ sudo apt install curl
+ curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+ sudo apt update
+ sudo apt install ros-melodic-desktop-full
+ echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
+ source ~/.bashrc
+ sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
+```
 Con esto tendriamos ya ros instado y listo para usar.
 
-## 2. Preparacion entorno de jetson
+### 3. Visualizacion de herramientas de ROS con gui en windows 10 y WSL
 
+Si se dispone Windows 11 y WSL2.0 no hara falta nada ya que de forma nativa se pueden ejecutar las app de GUI de linux nativamente.
 
+Para el resto habra que instalar un servidor X11 para que poder visualizarlo en linux.
+
+//TODO
+
+## 2. Preparacion entorno de jetson con ROS
+
+//
 
