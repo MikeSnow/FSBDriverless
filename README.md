@@ -37,7 +37,7 @@ De tal manera deberia de quedar el binario y el fichero setting.json en el mismo
 Si lo hemos hecho todo bien, podremos iniciar el binario nos dejara escoger la pista , y al darle a run podremos manejar el coche con las flechas del teclado.
 
 #### 3. Conexion con ROS 
-El simulaador se puede conectar a traves de python o de ros para poder ser controlado con otros elementos externos. 
+El simulador se puede conectar a traves de python o de ros para poder ser controlado con otros elementos externos. 
 En nuestro caso nos vamos a centrar en la conexion con ROS ya que la idea es dejar listo el sistema que sea lo mas migrable al sistema fisico.
 
 Para ello tendremos que tener instalado ros melodic en el apartado 2 indico como se instala Ros en WSL ( Windows for subsystem linux).
@@ -55,10 +55,13 @@ Cambiaremos el repositorio al tag 2.0 .
 Usar siempre el repositorio con la misma version que el binario, en este caso para el 2021 sera la version 2.0
 
 Desde la terminal de Ubuntu de wsl iremos a la carpeta : 
-> cd ~/Formula-Student-Driverless-Simulator
-> Airsim/setup.sh
+> $ ~/Formula-Student-Driverless-Simulator
+> $ Airsim/setup.sh
 
 Con esto se nos bajara y configurara el simulador en el que esta basado que es Airsim.
+Si el script diera error debido al interprete : 
+>$ sudo apt-get install dos2unix
+>$ dos2unix Airsim/setup.sh
 
 Configuraremos el entorno de catkin: 
 >cd ros
