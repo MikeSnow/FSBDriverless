@@ -55,24 +55,32 @@ Cambiaremos el repositorio al tag 2.0 .
 Usar siempre el repositorio con la misma version que el binario, en este caso para el 2021 sera la version 2.0
 
 Desde la terminal de Ubuntu de wsl iremos a la carpeta : 
+ ```
 > $ ~/Formula-Student-Driverless-Simulator
 > $ Airsim/setup.sh
+ ```
 
 Con esto se nos bajara y configurara el simulador en el que esta basado que es Airsim.
 Si el script diera error debido al interprete : 
+ ```
 >$ sudo apt-get install dos2unix
 >$ dos2unix Airsim/setup.sh
+ ```
 
 Configuraremos el entorno de catkin: 
+ ```
 >cd ros
 >catkin init
 >catkin config --cmake-args -DCMAKE_BUILD_TYPE=Release #(Optional)
 >catkin build
+ ```
 
 Una vez hecho esto , abriremos el simulador y lo dejaremos corriendo y desde la terminar de ubuntu iniciaremos.
+ ```
 >cd ros
 >source devel/setup.bash
 >roslaunch fsds_ros_bridge fsds_ros_bridge.launch
+ ```
 
 Si es todo correcto vemos que nodo de ros habra arrancado y con rviz podemos ver los sensores y en el simulador veremos que el imput habra cambiado de keyboard a API.
 
