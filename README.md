@@ -47,6 +47,8 @@ sudo apt install python-std-msgs
 
 El archivo **Maquina_Estados_UI.py**, sera un nodo de ROS, el cual actualizara el estado actual de el sistema Driverless dependiendo de los parametros introducidos desde la interfaz grafica. Cuando se pulse el boton de actualizar, los parametros introducidos se publicaran siguiendo el diagrama de estados dado por la normativa de la competición:
 
+![Diarama de estados](./Diagramas/diagrama_estados.png)
+
 Para iniciar el proceso, simplemente tendremos que ejecutar el archivo usando python.
 ```
 python Maquina_Estados_UI.py
