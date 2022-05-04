@@ -1,0 +1,8 @@
+prefix=/home/miki/catkin_ws/install
+
+Name: eufs_gazebo_plugins
+Description: Description of eufs_gazebo_plugins
+Version: 1.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lgazebo_state_ground_truth
+Requires: gazebo_msgs roscpp nodelet geometry_msgs nav_msgs eufs_msgs ackermann_msgs tf2_ros tf

@@ -1,2 +1,5 @@
 # FSBDriverless
-Repositiorio del grupo de formula student driverless
+
+Github dedicado al equipo de formula student bizkaia driverless.
+
+En la carpeta [simuladorUK]()

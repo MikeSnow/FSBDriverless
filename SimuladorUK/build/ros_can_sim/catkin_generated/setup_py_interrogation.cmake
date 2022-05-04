@@ -1,0 +1,7 @@
+set(ros_can_sim_SETUP_PY_SETUP_MODULE "distutils.core")
+set(ros_can_sim_SETUP_PY_VERSION "1.0.0")
+set(ros_can_sim_SETUP_PY_SCRIPTS "")
+set(ros_can_sim_SETUP_PY_PACKAGES "ros_can_sim")
+set(ros_can_sim_SETUP_PY_PACKAGE_DIRS "src/ros_can_sim")
+set(ros_can_sim_SETUP_PY_MODULES "")
+set(ros_can_sim_SETUP_PY_MODULE_DIRS "")

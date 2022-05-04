@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>eufs_msgs</name>
+  <version>0.0.0</version>
+  <description>The eufs_msgs package</description>
+
+  <maintainer email="contacteufs@gmail.com">eufs</maintainer>
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>genmsg</buildtool_depend>
+  
+  <depend>genmsg</depend>
+  <depend>geometry_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>message_runtime</depend>
+  <depend>diagnostic_msgs</depend>
+  <depend>actionlib</depend>
+  <depend>actionlib_msgs</depend>
+
+  <export>
+  </export>
+</package>

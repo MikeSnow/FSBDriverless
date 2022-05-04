@@ -1,0 +1,10 @@
+(cl:in-package eufs_msgs-msg)
+(cl:export '(HEADER-VAL
+          HEADER
+          AVERAGE_TIME_BETWEEN_POSES-VAL
+          AVERAGE_TIME_BETWEEN_POSES
+          AVERAGE_OPTIMIZATION_CYCLE_TIME-VAL
+          AVERAGE_OPTIMIZATION_CYCLE_TIME
+          AVERAGE_SLEEP_TIME-VAL
+          AVERAGE_SLEEP_TIME
+))
