@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/driverless/sim/devel/.private/velodyne_gazebo_plugins/setup.sh

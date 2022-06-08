@@ -1,0 +1,7 @@
+Symlinking /home/driverless/sim/devel/lib/libpointcloud_to_laserscan.so
+Symlinking /home/driverless/sim/devel/lib/liblaserscan_to_pointcloud.so
+Symlinking /home/driverless/sim/devel/lib/pkgconfig/pointcloud_to_laserscan.pc
+Symlinking /home/driverless/sim/devel/lib/pointcloud_to_laserscan/pointcloud_to_laserscan_node
+Symlinking /home/driverless/sim/devel/lib/pointcloud_to_laserscan/laserscan_to_pointcloud_node
+Symlinking /home/driverless/sim/devel/share/pointcloud_to_laserscan/cmake/pointcloud_to_laserscanConfig.cmake
+Symlinking /home/driverless/sim/devel/share/pointcloud_to_laserscan/cmake/pointcloud_to_laserscanConfig-version.cmake

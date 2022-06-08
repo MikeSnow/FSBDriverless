@@ -1,0 +1,4 @@
+Symlinking /home/driverless/sim/devel/lib/python2.7/dist-packages/ros_can_sim/__init__.py
+Symlinking /home/driverless/sim/devel/lib/pkgconfig/ros_can_sim.pc
+Symlinking /home/driverless/sim/devel/share/ros_can_sim/cmake/ros_can_simConfig.cmake
+Symlinking /home/driverless/sim/devel/share/ros_can_sim/cmake/ros_can_simConfig-version.cmake

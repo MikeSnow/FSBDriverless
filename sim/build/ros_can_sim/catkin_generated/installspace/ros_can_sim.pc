@@ -1,0 +1,8 @@
+prefix=/home/driverless/sim/install
+
+Name: ros_can_sim
+Description: Description of ros_can_sim
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

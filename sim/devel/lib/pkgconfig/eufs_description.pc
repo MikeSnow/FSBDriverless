@@ -1,0 +1,8 @@
+prefix=/home/driverless/sim/devel/.private/eufs_description
+
+Name: eufs_description
+Description: Description of eufs_description
+Version: 0.1.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

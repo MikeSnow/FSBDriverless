@@ -1,0 +1,24 @@
+image: ros:melodic-ros-core
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive 
+
+cache:
+  paths:
+    - ccache/
+
+before_script:
+ - sudo rm -vf /var/lib/apt/lists/*
+ - sudo apt-get update
+ - sudo apt install git -y
+ - git clone https://gitlab.com/VictorLamoine/ros_gitlab_ci.git
+ - source ros_gitlab_ci/gitlab-ci.bash >/dev/null
+
+# catkin tools
+catkin_tools:
+  stage: build
+  script:
+    - catkin build --summarize --no-status --force-color
+  only:
+    - merge_requests
+    - master

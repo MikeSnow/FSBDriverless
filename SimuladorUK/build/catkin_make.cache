@@ -1,2 +1,0 @@
-eufs_description:eufs_gazebo:eufs_gazebo_plugins:eufs_launcher:eufs_sim:ros_can_sim
--DCATKIN_DEVEL_PREFIX=/home/miki/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/miki/catkin_ws/install -G Unix Makefiles

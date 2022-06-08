@@ -1,0 +1,22 @@
+(cl:in-package eufs_msgs-msg)
+(cl:export '(HEADER-VAL
+          HEADER
+          THROTTLE_RELAY_ENABLED-VAL
+          THROTTLE_RELAY_ENABLED
+          AUTONOMOUS_ENABLED-VAL
+          AUTONOMOUS_ENABLED
+          RUNSTOP_MOTION_ENABLED-VAL
+          RUNSTOP_MOTION_ENABLED
+          STEERING_COMMANDER-VAL
+          STEERING_COMMANDER
+          STEERING-VAL
+          STEERING
+          THROTTLE_COMMANDER-VAL
+          THROTTLE_COMMANDER
+          THROTTLE-VAL
+          THROTTLE
+          FRONT_BRAKE_COMMANDER-VAL
+          FRONT_BRAKE_COMMANDER
+          FRONT_BRAKE-VAL
+          FRONT_BRAKE
+))

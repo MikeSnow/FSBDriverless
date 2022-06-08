@@ -1,0 +1,8 @@
+prefix=/home/driverless/sim/devel/.private/eufs_gazebo_plugins
+
+Name: eufs_gazebo_plugins
+Description: Description of eufs_gazebo_plugins
+Version: 1.0.0
+Cflags: -I/home/driverless/sim/src/eufs_sim/eufs_gazebo_plugins/gazebo_cone_ground_truth/include
+Libs: -L${prefix}/lib -lgazebo_state_ground_truth
+Requires: gazebo_msgs roscpp nodelet geometry_msgs nav_msgs eufs_msgs ackermann_msgs tf2_ros tf

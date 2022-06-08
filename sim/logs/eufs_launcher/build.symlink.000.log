@@ -1,0 +1,4 @@
+Symlinking /home/driverless/sim/devel/lib/python2.7/dist-packages/eufs_launcher/__init__.py
+Symlinking /home/driverless/sim/devel/lib/pkgconfig/eufs_launcher.pc
+Symlinking /home/driverless/sim/devel/share/eufs_launcher/cmake/eufs_launcherConfig-version.cmake
+Symlinking /home/driverless/sim/devel/share/eufs_launcher/cmake/eufs_launcherConfig.cmake

@@ -1,0 +1,12 @@
+[35m[1mScanning dependencies of target gazebo_cone_ground_truth[0m
+[ 12%] [32mBuilding CXX object gazebo_cone_ground_truth/CMakeFiles/gazebo_cone_ground_truth.dir/src/gazebo_cone_ground_truth.cpp.o[0m
+[35m[1mScanning dependencies of target gazebo_race_car_model[0m
+[ 25%] [32mBuilding CXX object gazebo_race_car_model/CMakeFiles/gazebo_race_car_model.dir/src/gazebo_ros_race_car_model.cpp.o[0m
+[ 37%] [32m[1mLinking CXX shared library /home/driverless/sim/devel/.private/eufs_gazebo_plugins/lib/libgazebo_cone_ground_truth.so[0m
+[ 37%] Built target gazebo_cone_ground_truth
+[ 50%] [32mBuilding CXX object gazebo_race_car_model/CMakeFiles/gazebo_race_car_model.dir/src/state_machine.cpp.o[0m
+[ 62%] [32mBuilding CXX object gazebo_race_car_model/CMakeFiles/gazebo_race_car_model.dir/src/vehicle_model.cpp.o[0m
+[ 75%] [32mBuilding CXX object gazebo_race_car_model/CMakeFiles/gazebo_race_car_model.dir/src/models/dynamic_bicycle.cpp.o[0m
+[ 87%] [32mBuilding CXX object gazebo_race_car_model/CMakeFiles/gazebo_race_car_model.dir/src/models/point_mass.cpp.o[0m
+[100%] [32m[1mLinking CXX shared library /home/driverless/sim/devel/.private/eufs_gazebo_plugins/lib/libgazebo_race_car_model.so[0m
+[100%] Built target gazebo_race_car_model

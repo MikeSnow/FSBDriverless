@@ -1,8 +1,0 @@
-prefix=/home/miki/catkin_ws/devel
-
-Name: eufs_launcher
-Description: Description of eufs_launcher
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: roscpp gazebo_ros
