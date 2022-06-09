@@ -9,67 +9,76 @@ import rospy
 
 
 conosTotales = []
+conosTotalesHash = {}
 markerArray = MarkerArray()
 i = 0
 def callback(msg):
     global conosTotales
+    global conosTotalesHash
     global markerArray
     global i
 
     from_frame = msg.header.frame_id
     to_frame = "map"
-    stamp = rospy.Time(0)
+    stamp = rospy.Time.now()
     transform = getTransform(stamp, from_frame, to_frame)
 
     for cone in msg.orange_cones:
         dist = cone.z
         cone.z = 0.0
         coneTransformed = transform_point(transform, cone).point
-        coneTransformed.z = dist
-        flag = conoNuevo(coneTransformed)
-        if not flag: # el cono no esta metido
-            conosTotales.append(coneTransformed)
-            marker = Marker()
-            marker.header.frame_id = to_frame
-            marker.header.stamp = stamp
-            marker.type = Marker.MESH_RESOURCE
-            marker.ns = str(dist)
-            marker.id = i
-            marker.action = 0
-            marker.pose.position = coneTransformed
-            marker.pose.orientation.x = 0.0
-            marker.pose.orientation.y = 0.0
-            marker.pose.orientation.z = 0.0
-            marker.pose.orientation.w = 1
-            marker.scale.x = 1.5
-            marker.scale.y = 1.5
-            marker.scale.z = 1.5
-            marker.color.r = 1.0
-            marker.color.g = 0.470999997854
-            marker.color.b = 0.0
-            marker.color.a = 1.0
-            marker.lifetime.secs = 0
-            marker.lifetime.nsecs = 0
-            marker.frame_locked = False
-            marker.mesh_resource = "package://eufs_description/meshes/cone_big.dae"
-            marker.mesh_use_embedded_materials = False
-            # print(marker)
-            markerArray.markers.append(marker)
-            i = i + 1
-    pub.publish(markerArray)
 
-def conoNuevo (cono):
-    global conosTotales
 
-    i = 0
-    flag = False
-    while (i < len(conosTotales) and not flag):
-        act = conosTotales[i]
-        if (pow(act.x-cono.x,2)>=0.2 or pow(act.y-cono.y,2)>=0.2): #El cono no esta metido
-            i = i + 1
-        else: # El cono esta metido ya
-            flag = True
-    return flag
+        # coneTransformed.z = dist
+    #     flag = conoNuevo(coneTransformed)
+    #     if flag: # el cono no esta metido
+    #         conosTotales.append(coneTransformed)
+    #
+    #         marker = Marker()
+    #         marker.header.frame_id = to_frame
+    #         marker.header.stamp = stamp
+    #         marker.type = Marker.MESH_RESOURCE
+    #         marker.ns = str(dist)
+    #         marker.id = i
+    #         marker.action = 0
+    #         marker.pose.position = coneTransformed
+    #         marker.pose.orientation.x = 0.0
+    #         marker.pose.orientation.y = 0.0
+    #         marker.pose.orientation.z = 0.0
+    #         marker.pose.orientation.w = 1
+    #         marker.scale.x = 1.5
+    #         marker.scale.y = 1.5
+    #         marker.scale.z = 1.5
+    #         marker.color.r = 1.0
+    #         marker.color.g = 0.470999997854
+    #         marker.color.b = 0.0
+    #         marker.color.a = 1.0
+    #         marker.lifetime.secs = 0
+    #         marker.lifetime.nsecs = 0
+    #         marker.frame_locked = False
+    #         marker.mesh_resource = "package://eufs_description/meshes/cone_big.dae"
+    #         marker.mesh_use_embedded_materials = False
+    #         # print(marker)
+    #         markerArray.markers.append(marker)
+    #         i = i + 1
+    # pubM.publish(markerArray)
+
+# def conoNuevo (cono):
+#
+#     global conosTotales
+#
+#     i = 0
+#     flag = True
+#
+#     while (i < len(conosTotales) and flag):
+#         act = conosTotales[i]
+#         if (pow(act.x-cono.x,2)>=0.0625 or pow(act.y-cono.y,2)>=0.0625): #El cono no esta metido
+#             flag = True
+#             i = i + 1
+#         else: # El cono esta metido ya
+#             flag = False
+#
+#     return flag
 
 def getTransform(stamp, from_frame, to_frame):
     tf_buffer = tf2_ros.Buffer(rospy.Duration(100.0))  # tf buffer length
@@ -108,6 +117,7 @@ def transform_point(transform, input_point):
     #     raise
 
 rospy.init_node('conos_global')
-rospy.Subscriber('/conoPercepcion', ConeArray, callback)
-pub = rospy.Publisher("/visualConeGlobal", MarkerArray, queue_size=10)
+rospy.Subscriber('/conoPercepcion/local', ConeArray, callback)
+pubM = rospy.Publisher("/visualConeGlobal", MarkerArray, queue_size=10)
+pubC = rospy.Publisher("/conoPercepcion/global", MarkerArray, queue_size=10)
 rospy.spin()

@@ -18,6 +18,7 @@ def callback(msg):
         marker.ns = ''
         marker.id = i
         marker.action = 0
+        cone.z = 0.0
         marker.pose.position = cone
         marker.pose.orientation.x = 0.0
         marker.pose.orientation.y = 0.0
@@ -43,5 +44,5 @@ def callback(msg):
 
 rospy.init_node('cone_visual')
 pub = rospy.Publisher("/visualCone", MarkerArray, queue_size=10)
-subLS = rospy.Subscriber('/conoPercepcion', ConeArray, callback)
+subLS = rospy.Subscriber('/conoPercepcion/local', ConeArray, callback)
 rospy.spin()
