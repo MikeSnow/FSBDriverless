@@ -10,7 +10,7 @@ Depues, tendremos que construir y compilar el paquete, que lo haremos con el sig
 ```
 catkin build
 ```
-Con esto, el simulador debería de estar instalado correctamente. En caso de que surga cualquier error, sacaremos la carpeta /sim/src/py de el workspace, y se repetirá el proceso anterior mencionado.
+Con esto, el simulador debería de estar instalado correctamente.
 
 
 ## Ejecutar el simulador
