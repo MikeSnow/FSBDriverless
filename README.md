@@ -2,7 +2,7 @@
 Este es el workspace de desarrollo driverless de Formula Student Bizkaia.
 
 ## Estructura del workspace:
-´´´
+```
 ~/fsbdriverless
   |__ environment.sh
   |__ update_dependencies.sh
@@ -23,10 +23,10 @@ Este es el workspace de desarrollo driverless de Formula Student Bizkaia.
       |   |__ velocity_estimator
       |
       |__ 3_control
-´´´
+```
 
 ## Source del workspace
 Suponiendo que el el proyecto está clonado en $HOME:  
-´´´
+```
 echo "source ~/FSBDriverless/workspace/devel/setup.bash">> ~/.bashrc
-´´´
+```
