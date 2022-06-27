@@ -1,0 +1,8 @@
+prefix=/home/alan/FSBDriverless/workspace/devel
+
+Name: estimation
+Description: Description of estimation
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

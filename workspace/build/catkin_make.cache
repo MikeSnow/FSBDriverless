@@ -1,0 +1,2 @@
+estimation:fsb_common
+-DCATKIN_DEVEL_PREFIX=/home/alan/FSBDriverless/workspace/devel -DCMAKE_INSTALL_PREFIX=/home/alan/FSBDriverless/workspace/install -G Unix Makefiles
