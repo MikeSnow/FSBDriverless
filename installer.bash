@@ -4,7 +4,7 @@
 # Información recogida en: http://wiki.ros.org/melodic/Installation/Ubuntu
 
 NO_EXECUTION="FALSE"
-ROS_DISTRO="noetic"
+ROS_DISTRO="galactic"
 SHELL_RC_INSTALL=".bashrc"
 VERSION_INSTALL="Desktop-Full"
 
@@ -16,12 +16,69 @@ function HELP(){
     echo "Script de instalación automática de ROS Melodic Ubuntu"
     echo
     echo -e "\t-h\t Imprime la ayuda del script."
-    echo -e "\t-d\t Especifica cuál es la distribución de ROS a instalar (ROS noetic por defecto)"
-    echo -e "\t\t Distribuciones ROS Ubuntu: ["melodic", "noetic"]"
+    echo -e "\t-d\t Especifica cuál es la distribución de ROS a instalar (ROS galactic por defecto)"
+    echo -e "\t\t Distribuciones ROS Ubuntu: ["galactic", "melodic", "noetic"]"
     echo -e "\t-s\t Especifica cuál es el archivo de configuración del shell (.bashrc por defecto)."
     echo -e "\t\t Si se establece vacío ("") no se hará un source automático de ROS en el shell"
-    echo -e "\t-v\t Especifica la versión de ROS Melodic a instalar (Melodic Desktop-Full por defecto)"
-    echo -e "\t\t Versiones Melodic Ubuntu: ["Desktop-Full", "Desktop","ROS-Base"]"
+    echo -e "\t-v\t Especifica la versión de ROS instalar (Galactic Desktop-Full por defecto)"
+    echo -e "\t\t Versiones disponibles Ubuntu: "
+    echo -e "\t\t\t GALACTIC ["Desktop-Full", "Desktop","ROS-Base"]"
+    echo -e "\t\t\t MELODIC ["Desktop-Full", "Desktop","ROS-Base"]"
+}
+
+############################################################
+#                       GALACTIC INSTALLATION              #
+############################################################
+function installGALACTICUBUNTU(){
+    echo "Installing Ros Galactic Ubuntu $VERSION_INSTALL"
+    echo "Taking in consideration the system is in UTF-8 format (\$locale)"
+
+    sudo apt install software-properties-common
+    sudo add-apt-repository universe
+    sudo apt update && sudo apt install curl gnupg lsb-release
+    sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(source /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+
+    case $VERSION_INSTALL in
+        "Desktop-Full")
+            sudo apt install ros-galactic-desktop 
+            ;;
+        "Desktop")
+            sudo apt install ros-galactic-desktop 
+            ;;
+        "ROS-Base")
+            sudo apt install ros-galactic-ros-base
+            ;;
+        *)
+            sudo apt install ros-galactic-desktop # Opción por defecto
+            ;;
+    esac
+
+    # Enviroment setup
+    # To set an especific shell config file set venv SHELL_RC_INSTALL 
+
+    path="/home/"$(id -un)"/"$SHELL_RC_INSTALL
+    aux=$(cat $path | grep "source /opt/ros/$ROS_DISTRO/setup.bash")
+
+    if [ -z "$aux" ]; then
+        echo "Adding the enviroment setup..."
+        $(echo "source /opt/ros/$ROS_DISTRO/setup.bash" >> $path)
+    else
+        echo "Enviroment ready"
+    fi
+
+    source $path 
+    
+    # Dependencies for building packages
+    echo "Installing dependencies for building packages..."
+    sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+    sudo apt install python3-roslaunch
+
+    # Initialize rosdep
+    echo "Initializing rosdep..."
+    sudo apt install python3-rosdep
+    sudo rosdep init
+    rosdep update
 }
 
 ############################################################
@@ -137,6 +194,7 @@ function installROSUBUNTU(){
     # There are different default installations
 
     case $ROS_DISTRO in
+        "galactic")installGALACTICUBUNTU;;
         "melodic")installMELODICUBUNTU;;
         "noetic")installNOETICUBUNTU;;
         *)installMELODICUBUNTU;;
