@@ -1,8 +1,0 @@
-prefix=/home/alan/FSBDriverless/workspace/install
-
-Name: fsb_common
-Description: Description of fsb_common
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
